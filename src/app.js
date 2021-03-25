@@ -9,6 +9,7 @@ import {getWeather} from './utils/getWeather.js'
 //const getWeather= require('./utils/getWeather.js');
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app= express();
+const thePort= process.env.PORT   || 3001;
 // set paths for express config
 const viewsPath= path.join(__dirname,'../templates/views');
 const partialsPath= path.join(__dirname,'../templates/partials');
@@ -44,9 +45,6 @@ app.get('/help',(req,res) => {
     });
 })
 
-// app.get('/weather',(req,res) => {
-//     res.send('Yer Weather');
-// })
 
 app.get('/weather',(req,res) => {
     let reply= '';
@@ -111,7 +109,7 @@ app.get('*',(req,res) => {
 //     res.send('About this...');
 // })
 
-app.listen(3001,() => {
-    ('Up on 3001');
+app.listen(thePort,() => {
+    console.log(`Up on ${thePort}`);
 
 })
