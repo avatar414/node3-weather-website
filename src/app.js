@@ -7,9 +7,11 @@ import {geocode} from './utils/geocode.js';
 import {getWeather} from './utils/getWeather.js'
 //const geocode= require('./utils/geocode.js');
 //const getWeather= require('./utils/getWeather.js');
+
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const app= express();
 const thePort= process.env.PORT   || 3001;
+
 // set paths for express config
 const viewsPath= path.join(__dirname,'../templates/views');
 const partialsPath= path.join(__dirname,'../templates/partials');
